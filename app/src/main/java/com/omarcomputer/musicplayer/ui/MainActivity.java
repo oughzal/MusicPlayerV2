@@ -123,7 +123,11 @@ public class MainActivity extends AppCompatActivity implements TrackAdapter.List
             }
 
         });
-
+        player.btnPrevious.setOnClickListener(v->{
+            if (trackViewModel.currentIndex.getValue() > 0) {
+                trackViewModel.currentIndex.setValue(trackViewModel.currentIndex.getValue() - 1);
+            }
+        });
 
         player.playProgress.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
